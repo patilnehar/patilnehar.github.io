@@ -32,8 +32,17 @@ section {
   padding: 16px 20px;
   max-width: 900px;
   margin: auto;
-  animation: fadeUp 1s ease-out both;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
+/* When visible */
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* Headings */
 h1, h2, h3 {
@@ -64,6 +73,18 @@ h2 {
 /* Hero */
 .hero {
   text-align: center;
+  min-height: 100vh;          /* Full screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    /* Vertical centering */
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Prevent next section from peeking on load */
+.hero + section {
+  margin-top: 0;
 }
 
 .subtitle {
