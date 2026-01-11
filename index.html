@@ -303,11 +303,13 @@ footer {
   display: flex;
   gap: 24px;
 }
-    @media (max-width: 768px) {
+
+@media (max-width: 768px) {
   .nav-links {
     display: none;
   }
 }
+
 .nav-links a {
   color: var(--text-secondary);
   font-size: 0.9rem;
@@ -318,23 +320,15 @@ footer {
 }
 
 .nav-toggle {
-  display: block;
-  font-size: 2.5rem;
+  display: none;
+  font-size: 2rem;
   cursor: pointer;
   color: var(--text-primary);
 }
-  @media (max-width: 768px) {
+
+@media (max-width: 768px) {
   .nav-toggle {
     display: block;
-  }
-}  
-.nav-links.open {
-  display: flex;
-  left: 0;
-}
-  .nav-links a {
-    font-size: 1.6rem;
-    color: var(--text-primary);
   }
 }
     /* =====================
