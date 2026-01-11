@@ -21,6 +21,7 @@ body {
  color: var(--text-primary);
   line-height: 1.6;
   scroll-behavior: smooth;
+  padding-top: 56px;   /* ← ADD HERE */
 }
 
 a {
@@ -66,10 +67,13 @@ h2 {
 /* Hero */
 .hero {
   text-align: center;
-  min-height: 100vh;          /* Full screen */
+  min-height: calc(100vh - 56px);         /* Full screen */
   display: flex;
   flex-direction: column;
-  justify-content: center;    /* Vertical centering */
+ .hero {
+  justify-content: space-between;
+}
+padding: 0 16px;
   align-items: center;
   padding-top: 0;
   padding-bottom: 0;
@@ -107,7 +111,8 @@ h2 {
 /* Buttons */
 .buttons {
   display: flex;
-  justify-content: center;
+justify-content: center;
+padding: 0 16px;
   gap: 16px;
   margin-top: 28px;   /* 👈 creates breathing room */
 }
@@ -179,10 +184,6 @@ h2 {
 #contact {
   text-align: left;
 }
-/* Contact */
-#contact {
-  text-align: left;
-}
 
 .contact-item {
   display: flex;
@@ -238,6 +239,7 @@ footer {
   .location-line {
   display: flex;
   justify-content: center;
+padding: 0 16px;
   align-items: center;
   gap: 28px;        /* 👈 more space between Germany & India */
   margin-top: 10px;
@@ -257,7 +259,8 @@ footer {
 
     .skills-line {
   display: flex;
-  justify-content: center;
+ justify-content: center;
+padding: 0 16px;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
@@ -286,7 +289,8 @@ footer {
   background: #0f0f0f;
   display: flex;
   align-items: center;
-  justify-content: center;
+ justify-content: space-between;
+padding: 0 16px;
 
   z-index: 1000;
   border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -305,11 +309,6 @@ footer {
 .nav-links a:hover {
   color: var(--primary-accent);
 }
-
-/* Push page content below navbar */
-body {
-  padding-top: 56px;
-}
   .nav-toggle {
   display: none;
   font-size: 2rem;
@@ -322,6 +321,34 @@ body {
     display: block;
   }
 }  
+ /* =====================
+   MOBILE SLIDE MENU
+   ===================== */
+@media (max-width: 768px) {
+
+  .nav-links {
+    position: fixed;
+    top: 56px;
+    left: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: calc(100vh - 56px);
+
+    background: #0f0f0f;
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    left: 0;
+  }
+}   
 </style>
 </head>
 <body>
@@ -521,5 +548,19 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
     No services are offered and no data is collected. The views expressed are personal and do not represent those
     of any current or former employer. All information provided is accurate to the best of my knowledge.
   </footer>
+  <script>
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+    });
+  });
+</script>
 </body>
 </html>
