@@ -304,12 +304,6 @@ footer {
   gap: 24px;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-}
-
 .nav-links a {
   color: var(--text-secondary);
   font-size: 0.9rem;
@@ -325,27 +319,41 @@ footer {
   cursor: pointer;
   color: var(--text-primary);
 }
-
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-  }
-}
     /* =====================
    CLEAN MOBILE SLIDE MENU
    ===================== */
+  @media (prefers-reduced-motion: reduce) {
+  section {
+    animation: none;
+  }
+}  
+ /* =====================
+   CLEAN MOBILE SLIDE MENU (FINAL)
+   ===================== */
+
+.nav-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-primary);
+}
 
 @media (max-width: 768px) {
+
+  .nav-toggle {
+    display: block;
+  }
+
   .nav-links {
     position: fixed;
     top: 0;
     left: -100%;
-    width: 75%;
-    max-width: 280px;
+    width: 80%;
+    max-width: 300px;
     height: 100vh;
 
     background: #0f0f0f;
-    padding: 80px 24px;
+    padding: 100px 32px;
 
     display: flex;
     flex-direction: column;
@@ -364,13 +372,7 @@ footer {
     left: 0;
   }
 }
-
-  @media (prefers-reduced-motion: reduce) {
-  section {
-    animation: none;
-  }
-}  
-    
+   
 </style>
 </head>
 <body>
@@ -383,9 +385,7 @@ footer {
     <a href="#contact">Contact</a>
   </div>
 
-  <div class="nav-toggle" id="navToggle">
-    ☰
-  </div>
+  <div class="nav-toggle" id="navToggle">☰</div>
 </nav>
   <section class="hero">
     <h1>
