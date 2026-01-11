@@ -44,6 +44,10 @@ h1 {
   font-size: 2.8rem;
   margin-bottom: 10px;
 }
+    .name-accent {
+  color: var(--primary-accent);
+}
+
 h2 {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -167,7 +171,7 @@ h2 {
 }
 
 .contact-value a {
-  color: #4fd1c5;
+  color: var(--primary-accent);
 }
 /* Footer */
 footer {
@@ -227,20 +231,46 @@ footer {
   background: var(--primary-accent);
   border-radius: 50%;
 }
+    .skills-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.skills-line .dot {
+  color: var(--primary-accent);
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
 
   @media (prefers-reduced-motion: reduce) {
   section {
     animation: none;
   }
 }  
+    
 </style>
 </head>
 <body>
   <!-- HERO -->
   <section class="hero">
-    <h1>Hi, I’m Neha Patil</h1>
+    <h1>
+  Hi, I’m <span class="name-accent">Neha Patil</span>
+</h1>
+    
     <img src="Neha_Patil.jpg" alt="Neha Patil" class="profile-photo">
-    <div class="subtitle">Operations & E Commerce | Strategy | Consulting | Logistics & Supply Chain</div>
+    <div class="subtitle skills-line">
+  <span>Strategy</span>
+  <span class="dot">•</span>
+  <span>Operations</span>
+  <span class="dot">•</span>
+  <span>Supply Chain</span>
+  <span class="dot">•</span>
+  <span>Business Transformation</span>
+</div>
+
    <div class="location-line">
   <div class="location-item">
     <span class="location-dot"></span>
@@ -368,26 +398,40 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
   <h2>Contact Me</h2>
 
   <p class="contact-item">
-    <strong>Email:</strong>
+  <span class="contact-label">Email:</span>
+  <span class="contact-value">
     <a href="mailto:nehapatil2105@yahoo.com">nehapatil2105@yahoo.com</a>
-  </p>
+  </span>
+</p>
+
+ <p class="contact-item">
+  <span class="contact-label">WhatsApp:</span>
+  <span class="contact-value">
+    <a href="https://wa.me/919890190521" target="_blank">
+      +91&nbsp;98901&nbsp;90521
+    </a>
+  </span>
+</p>
+
 
   <p class="contact-item">
-    <strong>WhatsApp:</strong>
-    <a href="https://wa.me/919890190521" target="_blank">+91 98901 90521</a>
-  </p>
+  <span class="contact-label">Phone:</span>
+  <span class="contact-value">
+    <a href="tel:+4917688323297">
+      +49&nbsp;176&nbsp;8832&nbsp;3297
+    </a>
+  </span>
+</p>
+
 
   <p class="contact-item">
-    <strong>Phone:</strong>
-    <a href="tel:+4917688323297">+49 176 8832 3297</a>
-  </p>
-
-  <p class="contact-item">
-    <strong>LinkedIn:</strong>
+  <span class="contact-label">LinkedIn:</span>
+  <span class="contact-value">
     <a href="https://www.linkedin.com/in/patilnehar" target="_blank">
       linkedin.com/in/patilnehar
     </a>
-  </p>
+  </span>
+</p>
 </section>
   <!-- DISCLAIMER -->
   <footer>
