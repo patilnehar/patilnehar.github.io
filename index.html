@@ -554,7 +554,28 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
       navLinks.classList.remove("open");
     });
   });
-    
+ const mobileNavLinks = document.querySelectorAll(".nav-links a");
+const mobileSections = document.querySelectorAll(".mobile-section");
+
+mobileNavLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth <= 768) {
+
+      mobileSections.forEach(section => {
+        section.style.display = "none";
+      });
+
+      const targetId = link.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        targetSection.style.display = "block";
+        window.scrollTo(0, 0);
+      }
+    }
+  });
+});
+   
 </script>
 </body>
 </html>
