@@ -6,16 +6,25 @@
   <title>Neha Patil | Portfolio</title>
 
   <style>
+     :root {
+  --primary-accent: #4fd1c5;
+  --secondary-accent: #007a7c;
+  --text-primary: #eaeaea;
+  --text-secondary: #b5b5b5;
+  --text-muted: #9a9a9a;   /* 👈 NEW third neutral color */
+  --surface-accent: rgba(255, 255, 255, 0.04);
+}
 body {
+
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: #0f0f0f;
-  color: #eaeaea;
+ color: var(--text-primary);
   line-height: 1.6;
 }
 
 a {
-  color: #4fd1c5;
+  color: var(--primary-accent);
   text-decoration: none;
 }
 
@@ -35,19 +44,26 @@ h1 {
   font-size: 2.8rem;
   margin-bottom: 10px;
 }
-
 h2 {
   font-size: 2rem;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }
-
+    .section-divider {
+  height: 1px;
+  width: 48px;
+  background: var(--primary-accent);
+  margin: 12px 0 24px;
+  opacity: 0.6;
+}
 /* Hero */
 .hero {
   text-align: center;
 }
 
 .subtitle {
-  color: #4fd1c5;
+  color: var(--primary-accent);
   font-size: 1.1rem;
   margin-bottom: 16px;
 }
@@ -90,57 +106,69 @@ h2 {
 
 /* Experience Cards */
 .experience {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--surface-accent);
   border-radius: 14px;
   padding: 18px 20px;
-  margin-bottom: 18px;
+  margin-bottom: 22px;   /* ⬅ slightly more separation */
 }
 
 .role {
   font-size: 1.05rem;
   font-weight: 600;
 }
-
 .role-meta {
   font-style: italic;
-  color: #9a9a9a;
+  color: var(--text-secondary);
   font-weight: 400;
   margin-left: 4px;
   font-size: 0.9em;
 }
-
 .company {
-  color: #b5b5b5;
-  margin-bottom: 6px;
+  color: var(--text-secondary);
   font-size: 0.9rem;
+  margin-bottom: 12px;   /* ⬅ more breathing room */
+}
+.company .separator {
+  font-size: 1.1rem;
+  margin: 0 6px;
+  opacity: 0.7;
 }
 
 .experience p {
   font-size: 0.88rem;
-  color: #cccccc;
+  color: var(--text-secondary);
   margin: 0;
+}    
+.about-secondary {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 8px;
 }
-
 /* Contact */
 #contact {
-  text-align: center;
+  text-align: left;
+}
+/* Contact */
+#contact {
+  text-align: left;
 }
 
 .contact-item {
-  font-size: 0.88rem;
-  color: #cccccc;
+  display: flex;
+  gap: 12px;
   margin: 6px 0;
+  font-size: 0.88rem;
 }
 
-.contact-item a {
-  font-size: 0.88rem;
-}
-    .contact-item strong {
+.contact-label {
+  min-width: 90px;
   color: #eaeaea;
   font-weight: 500;
 }
 
-
+.contact-value a {
+  color: #4fd1c5;
+}
 /* Footer */
 footer {
   text-align: center;
@@ -149,7 +177,6 @@ footer {
   color: #888;
   font-style: italic;
 }
-
 /* Fade animation */
 @keyframes fadeUp {
   from {
@@ -161,7 +188,6 @@ footer {
     transform: translateY(0);
   }
 }
-
 /* Mobile */
 @media (max-width: 768px) {
   h1 { font-size: 2rem; }
@@ -179,14 +205,29 @@ footer {
   }
 }
     .location-line {
-  font-size: 0.9rem;
-  color: #b5b5b5;
-  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 8px;
+  font-size: 0.95rem;
 }
-.location-line .highlight {
-  color: #4fd1c5;
+
+.location-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-accent);
   font-weight: 500;
 }
+
+.location-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--primary-accent);
+  border-radius: 50%;
+}
+
   @media (prefers-reduced-motion: reduce) {
   section {
     animation: none;
@@ -195,15 +236,23 @@ footer {
 </style>
 </head>
 <body>
-
   <!-- HERO -->
   <section class="hero">
     <h1>Hi, I’m Neha Patil</h1>
     <img src="Neha_Patil.jpg" alt="Neha Patil" class="profile-photo">
-    <div class="subtitle">Strategy | Operations | Supply Chain | Business Transformation</div>
-   <p class="location-line">
-  Based in Germany · <span class="highlight">Open to relocation (India)</span>
-</p>
+    <div class="subtitle">Operations & E Commerce | Strategy | Consulting | Logistics & Supply Chain</div>
+   <div class="location-line">
+  <div class="location-item">
+    <span class="location-dot"></span>
+    <span>Based in Germany</span>
+  </div>
+
+  <div class="location-item">
+    <span class="location-dot"></span>
+    <span>Open to relocation (India)</span>
+  </div>
+</div>
+
     <div class="buttons">
       <a href="#contact" class="primary">Contact Me</a>
       <a href="#">Download Resume</a>
@@ -212,12 +261,13 @@ footer {
 
   <!-- ABOUT -->
   <section>
-    <h2>About Me</h2>
+  <h2>About Me</h2>
+  <div class="section-divider"></div>
     <p>
       I am a strategy and operations professional with 9+ years of experience across management consulting,
       digital manufacturing, and large-scale operations.
     </p>
-    <p>
+    <p class="about-secondary">
      I have worked on 0–1 launches, cost optimization, process automation, and cross-functional execution
 across global environments, including automotive manufacturing at Mercedes-Benz Research & Development India,
 last-mile and Same-Day Delivery launches at Amazon, and management consulting at Infosys Consulting.
@@ -230,7 +280,12 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
 <div class="experience">
   <div class="role">Manager – Last Mile Operations <span class="role-meta">(Supply Chain & Operations Strategy)</span>
   </div>
-  <div class="company">Amazon · Feb 2025 – Present</div>
+ <div class="company">
+  Amazon
+  <span class="separator">•</span>
+  Feb 2025 – Present
+</div>
+
     <p>
     Driving last-mile and Same-Day Delivery operations with a focus on scale, efficiency, and execution excellence.
     </p>
@@ -238,7 +293,11 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
     <div class="experience">
       <div class="role">Consultant <span class="role-meta">(Project Manager - Global Rollout)</span>
       </div>
-      <div class="company">Infosys Consulting · Apr 2022 – Jan 2025</div>
+      <div class="company">
+        Infosys Consulting 
+        <span class="separator">•</span>
+        Apr 2022 – Jan 2025
+      </div>
   <p>
   Led global strategy and SAP transformation programs, coordinating cross-regional stakeholders to deliver complex, multi-country initiatives.
   </p>
@@ -247,34 +306,50 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
     <div class="experience">
       <div class="role">Management Consulting Intern <span class="role-meta">(Automotive Consulting – Mobility & Digital Transformation)</span>
       </div>
-      <div class="company">Capgemini Invent · Oct 2021 – Dec 2021</div>
+      <div class="company">
+        Capgemini Invent 
+        <span class="separator">•</span>
+        Oct 2021 – Dec 2021
+      </div>
       <p>
       Supported automotive mobility and digital transformation engagements through structured analysis and executive-ready insights.
       </p>
     </div>
 
     <div class="experience">
-      <div class="role">Senior Product Design Engineer <span class="role-meta">(Body-in-White (BIW) Process Planning - Cost Optimization & Global Scale-Up)</span>
+      <div class="role">Senior Product Design Engineer <span class="role-meta">(Process Planning - Cost Optimization & Global Scale-Up)</span>
       </div>
-      <div class="company">Mercedes-Benz Research & Development India · Oct 2018 – Dec 2020</div>
+      <div class="company">
+        Mercedes-Benz Research & Development India 
+         <span class="separator">•</span>
+        Oct 2018 – Dec 2020
+      </div>
       <p>
       Drove Centre of Competence initiatives for BIW process planning, delivering cost savings, quality improvements, and scalable digital manufacturing solutions.
       </p>
     </div>
 
     <div class="experience">
-      <div class="role">Product Design Engineer <span class="role-meta">(Body-in-White (BIW) Body Shop - Process Planning & Efficiency Improvement)</span>
+      <div class="role">Product Design Engineer <span class="role-meta">(Process Planning & Efficiency Improvement)</span>
       </div>
-      <div class="company">Mercedes-Benz Research & Development India · Aug 2016 – Sep 2018</div>
+      <div class="company">
+        Mercedes-Benz Research & Development India 
+         <span class="separator">•</span>
+        Aug 2016 – Sep 2018
+      </div>
       <p>
       Executed BIW body shop process planning and fixture design, improving efficiency and standardizing manufacturing workflows.
       </p>
     </div>
 
     <div class="experience">
-      <div class="role">Graduate Engineer Trainee <span class="role-meta">(Body Shop Processes - RDS (Rohbau Datenbank System) Global SaaS Rollout)</span>
+      <div class="role">Graduate Engineer Trainee <span class="role-meta">(RDS - Rohbau Datenbank System Global SaaS Rollout)</span>
       </div>
-      <div class="company">Mercedes-Benz Research & Development India · Nov 2015 – Jul 2016</div>
+      <div class="company">
+        Mercedes-Benz Research & Development India 
+         <span class="separator">•</span>
+        Nov 2015 – Jul 2016
+      </div>
       <p>
       Contributed to the global rollout of RDS, a centralized SaaS-based BIW inspection and quality platform, enabling standardized execution across multiple Mercedes-Benz plants.
       </p>
@@ -284,8 +359,8 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
   <!-- EDUCATION -->
   <section>
     <h2>Education</h2>
-    <p><strong>MBA</strong><br>Mannheim Business School, University of Mannheim · 2021</p>
-    <p><strong>Bachelor of Engineering (Mechanical)</strong><br>Savitribai Phule Pune University · 2015</p>
+    <p><strong>MBA</strong><br>Mannheim Business School, Germany · 2021</p>
+    <p><strong>Bachelor of Engineering (Mechanical)</strong><br>Savitribai Phule Pune University, India · 2015</p>
   </section>
 
   <!-- CONTACT -->
