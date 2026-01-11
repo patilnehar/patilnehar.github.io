@@ -84,13 +84,12 @@ h2 {
 }
 
  .hero-divider {
-  width: 64px;                    /* 👈 slightly shorter */
+  width: 80px;
   height: 1px;
-  background: var(--primary-accent);
-  opacity: 0.4;                   /* 👈 much subtler */
-  margin: 12px auto;
+  background: var(--text-muted);   /* 👈 gray */
+  opacity: 0.6;
+  margin: 10px auto;
 }
-
 .profile-photo {
   width: 180px;
   height: 180px;
@@ -243,6 +242,9 @@ footer {
   color: var(--text-muted);   /* 👈 quieter */
   font-weight: 400;
 }
+    .location-item.highlight {
+  color: var(--primary-accent);
+}
 
 .location-dot {
   width: 6px;                  /* 👈 matches skill dot visual size */
@@ -294,12 +296,12 @@ footer {
   <div class="location-item">
     <span class="location-dot"></span>
     <span>Based in Germany</span>
-  </div>
+  </div>  
+ <div class="location-item highlight">
+  <span class="location-dot"></span>
+  <span>Open to relocation (India)</span>
+</div>
 
-  <div class="location-item">
-    <span class="location-dot"></span>
-    <span>Open to relocation (India)</span>
-  </div>
 </div>
 
     <div class="buttons">
