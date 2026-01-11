@@ -230,9 +230,9 @@ footer {
     max-width: 260px;
     text-align: center;
   }
-    .mobile-section.active {
-    display: block;
-  }
+.mobile-section {
+  display: none;
+}
 }
   .location-line {
   display: flex;
@@ -359,7 +359,7 @@ padding: 0 16px;
   <div class="nav-toggle" id="navToggle">☰</div>
 </nav>
   <!-- HERO -->
-  <section class="hero mobile-section">
+<section class="hero mobile-section home">
     <h1>
   Hi, I’m <span class="name-accent">Neha Patil</span>
 </h1>
@@ -557,26 +557,33 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
       navLinks.classList.remove("open");
     });
   });
-    const mobileLinks = document.querySelectorAll(".nav-links a");
-const mobileSections = document.querySelectorAll(".mobile-section");
+    const links = document.querySelectorAll(".nav-links a");
+const sections = document.querySelectorAll(".mobile-section");
 
-mobileLinks.forEach(link => {
+function showSection(id) {
+  sections.forEach(sec => sec.style.display = "none");
+
+  const target = document.querySelector(id);
+  if (target) {
+    target.style.display = "block";
+    window.scrollTo(0, 0);
+  }
+}
+
+links.forEach(link => {
   link.addEventListener("click", () => {
     if (window.innerWidth <= 768) {
-      mobileSections.forEach(section => {
-        section.style.display = "none";
-      });
-
-      const targetId = link.getAttribute("href");
-      const targetSection = document.querySelector(targetId);
-
-      if (targetSection) {
-        targetSection.style.display = "block";
-        window.scrollTo(0, 0);
-      }
+      showSection(link.getAttribute("href"));
+      navLinks.classList.remove("open");
     }
   });
 });
+
+/* SHOW HERO ON FIRST LOAD (CRITICAL) */
+if (window.innerWidth <= 768) {
+  sections.forEach(sec => sec.style.display = "none");
+  document.querySelector(".home").style.display = "block";
+}
 </script>
 </body>
 </html>
