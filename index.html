@@ -86,12 +86,14 @@ h2 {
   margin-bottom: 14px;
 }
 
- .hero-divider {
-  width: 80px;
-  height: 1px;
-  background: var(--text-muted);   /* 👈 gray */
-  opacity: 0.6;
-  margin: 10px auto;
+.hero-divider {
+  width: 80px;                          /* same length */
+  height: 3px;                          /* thicker */
+  background: var(--primary-accent);    /* teal */
+  border-radius: 6px;                   /* rounded edges */
+  box-shadow: 
+    0 0 8px rgba(79, 209, 197, 0.6);     /* soft blur */
+  margin: 12px auto;
 }
 .profile-photo {
   width: 180px;
