@@ -542,40 +542,44 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
     of any current or former employer. All information provided is accurate to the best of my knowledge.
   </footer>
   <script>
-  const navToggle = document.getElementById("navToggle");
-  const navLinks = document.getElementById("navLinks");
+  <script>
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navLinks");
 
-  navToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-  });
+navToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
 
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("open");
-    });
-  });
- const mobileNavLinks = document.querySelectorAll(".nav-links a");
-const mobileSections = document.querySelectorAll(".mobile-section");
+const links = document.querySelectorAll(".nav-links a");
+const sections = document.querySelectorAll(".mobile-section");
 
-mobileNavLinks.forEach(link => {
+/* Show only selected section on mobile */
+function showSection(id) {
+  sections.forEach(sec => sec.style.display = "none");
+
+  const target = document.querySelector(id);
+  if (target) {
+    target.style.display = "block";
+    window.scrollTo(0, 0);
+  }
+}
+
+/* Nav click behavior */
+links.forEach(link => {
   link.addEventListener("click", () => {
     if (window.innerWidth <= 768) {
-
-      mobileSections.forEach(section => {
-        section.style.display = "none";
-      });
-
-      const targetId = link.getAttribute("href");
-      const targetSection = document.querySelector(targetId);
-
-      if (targetSection) {
-        targetSection.style.display = "block";
-        window.scrollTo(0, 0);
-      }
+      showSection(link.getAttribute("href"));
+      navLinks.classList.remove("open");
     }
   });
 });
-   
+
+/* ✅ INITIAL MOBILE LOAD → SHOW ALL (IMPORTANT) */
+if (window.innerWidth <= 768) {
+  sections.forEach(sec => sec.style.display = "block");
+}
+</script>
+
 </script>
 </body>
 </html>
