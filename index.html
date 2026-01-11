@@ -588,9 +588,13 @@ link.classList.add("active");
 
       // HOME → show all sections
       if (link.dataset.home === "true") {
-        sections.forEach(sec => sec.style.display = "block");
-        window.scrollTo(0, 0);
-      }
+  sections.forEach(sec => sec.style.display = "block");
+  window.scrollTo(0, 0);
+
+  // ensure Home stays active
+  links.forEach(l => l.classList.remove("active"));
+  link.classList.add("active");
+}
       // OTHER LINKS → show one section
       else {
         showSection(link.getAttribute("href"));
