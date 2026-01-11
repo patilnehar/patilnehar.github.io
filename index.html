@@ -579,12 +579,21 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
     No services are offered and no data is collected. The views expressed are personal and do not represent those
     of any current or former employer. All information provided is accurate to the best of my knowledge.
   </footer>
-  <script>
+ <script>
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
+  const navItems = navLinks.querySelectorAll("a");
 
+  // Toggle menu
   navToggle.addEventListener("click", () => {
     navLinks.classList.toggle("open");
+  });
+
+  // Close menu when a link is clicked
+  navItems.forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+    });
   });
 </script>
 </body>
