@@ -272,9 +272,55 @@ footer {
   color: var(--primary-accent);
   opacity: 1;
 }
+    /* =====================
+   STEP 1: BASIC NAVBAR
+   ===================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+
+  background: #0f0f0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.nav-links a:hover {
+  color: var(--primary-accent);
+}
+
+/* Push page content below navbar */
+body {
+  padding-top: 56px;
+}
 </style>
 </head>
 <body>
+  <nav class="navbar">
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
   <!-- HERO -->
   <section class="hero">
     <h1>
