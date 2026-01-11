@@ -310,16 +310,30 @@ footer {
 body {
   padding-top: 56px;
 }
+  .nav-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+}  
 </style>
 </head>
 <body>
   <nav class="navbar">
-  <div class="nav-links">
+  <div class="nav-links" id="navLinks">
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#education">Education</a>
     <a href="#contact">Contact</a>
   </div>
+
+  <div class="nav-toggle" id="navToggle">☰</div>
 </nav>
   <!-- HERO -->
   <section class="hero">
