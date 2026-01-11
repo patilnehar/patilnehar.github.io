@@ -347,11 +347,12 @@ padding: 0 16px;
 <body>
   <nav class="navbar">
   <div class="nav-links" id="navLinks">
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <a href="#home" data-home="true">Home</a>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</div>
 
   <div class="nav-toggle" id="navToggle">☰</div>
 </nav>
@@ -567,7 +568,17 @@ function showSection(id) {
 links.forEach(link => {
   link.addEventListener("click", () => {
     if (window.innerWidth <= 768) {
-      showSection(link.getAttribute("href"));
+
+      // HOME → show all sections
+      if (link.dataset.home === "true") {
+        sections.forEach(sec => sec.style.display = "block");
+        window.scrollTo(0, 0);
+      } 
+      // OTHER LINKS → show one section
+      else {
+        showSection(link.getAttribute("href"));
+      }
+
       navLinks.classList.remove("open");
     }
   });
