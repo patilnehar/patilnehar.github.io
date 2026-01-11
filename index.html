@@ -6,166 +6,151 @@
   <title>Neha Patil | Portfolio</title>
 
   <style>
-  
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f0f0f;
-      color: #eaeaea;
-      line-height: 1.6;
-    }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f0f0f;
+  color: #eaeaea;
+  line-height: 1.6;
+}
 
-    a {
-      color: #4fd1c5;
-      text-decoration: none;
-    }
+a {
+  color: #4fd1c5;
+  text-decoration: none;
+}
 
-    section {
-      padding: 28px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+section {
+  padding: 16px 20px;
+  max-width: 900px;
+  margin: auto;
+  animation: fadeUp 1s ease-out both;
+}
 
-    h1, h2, h3 {
-      font-weight: 500;
-    }
+/* Headings */
+h1, h2, h3 {
+  font-weight: 500;
+}
 
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-    }
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-    }
+h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
 
-    .subtitle {
-      color: #4fd1c5;
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
+/* Hero */
+.hero {
+  text-align: center;
+}
 
-    .buttons a {
-      display: inline-block;
-      margin-right: 15px;
-      margin-top: 20px;
-      padding: 12px 24px;
-      border-radius: 30px;
-      border: 1px solid #4fd1c5;
-    }
+.subtitle {
+  color: #4fd1c5;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
 
-    .buttons a.primary {
-      background: #4fd1c5;
-      color: #0f0f0f;
-    }
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 20px auto;
+  display: block;
+}
+
+/* Buttons */
 .buttons {
   display: flex;
   justify-content: center;
   gap: 16px;
 }
-    .experience {
-      margin-bottom: 40px;
-    }
 
-    .role {
-      font-size: 1.1rem;
-      font-weight: bold;
-    }
-
-    .company {
-      color: #b5b5b5;
-      margin-bottom: 8px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 60px 20px 30px;
-      color: #888;
-      font-size: 0.8rem;
-      font-style: italic;
-    }
-.profile-photo {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: 24px auto;
-  display: block;
+.buttons a {
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: 1px solid #4fd1c5;
 }
-    .hero {
-  text-align: center;
+
+.buttons a.primary {
+  background: #4fd1c5;
+  color: #0f0f0f;
 }
-    .experience p {
+
+/* Step 3 – Button hover */
+.buttons a:hover {
+  background: rgba(79, 209, 197, 0.1);
+}
+
+.buttons a.primary:hover {
+  background: #3bbfb3;
+}
+
+/* Experience Cards */
+.experience {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+}
+
+.role {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.role-meta {
+  font-style: italic;
+  color: #9a9a9a;
+  font-weight: 400;
+  margin-left: 4px;
+  font-size: 0.9em;
+}
+
+.company {
+  color: #b5b5b5;
+  margin-bottom: 6px;
   font-size: 0.9rem;
-  line-height: 1.5;
-  color: #cccccc;
 }
-    /* ---------- Mobile responsiveness ---------- */
-@media (max-width: 768px) {
 
-  h1 {
-    font-size: 2rem;
-  }
+.experience p {
+  font-size: 0.88rem;
+  color: #cccccc;
+  margin: 0;
+}
 
-  .profile-photo {
-    width: 140px;
-    height: 140px;
-  }
-
-  .subtitle {
-    font-size: 0.95rem;
-    line-height: 1.4;
-  }
-
-  section {
-    padding: 24px 16px;
-  }
-
-  .buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .buttons a {
-    width: 100%;
-    max-width: 260px;
-    text-align: center;
-  }
-} 
- /* ---------- Clean Contact Section ---------- */
+/* Contact */
 #contact {
   text-align: center;
-  margin-top: 20px;
-}
-
-#contact h2 {
-  margin-bottom: 20px;
 }
 
 .contact-item {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: #cccccc;
   margin: 6px 0;
 }
 
 .contact-item a {
-  color: #4fd1c5;
-  font-size: 0.88rem;
-  word-break: break-word;
-}
-
-.contact-item a:hover {
-  text-decoration: underline;
-}
-    .contact-item {
-  margin: 6px 0;
-}
-#contact a {
   font-size: 0.88rem;
 }
-    /* ---------- Soft Fade-in Animation ---------- */
+    .contact-item strong {
+  color: #eaeaea;
+  font-weight: 500;
+}
 
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 20px 24px;
+  font-size: 0.8rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* Fade animation */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -177,24 +162,37 @@
   }
 }
 
-/* Apply animation */
-section {
-  animation: fadeUp 0.9s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+/* Mobile */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  .profile-photo { width: 140px; height: 140px; }
+  .subtitle { font-size: 0.95rem; }
+  section { padding: 16px; }
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .buttons a {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+  }
 }
-
-/* Slight stagger for sections */
-section:nth-of-type(1) { animation-delay: 0.1s; }
-section:nth-of-type(2) { animation-delay: 0.2s; }
-section:nth-of-type(3) { animation-delay: 0.3s; }
-section:nth-of-type(4) { animation-delay: 0.4s; }
-section:nth-of-type(5) { animation-delay: 0.5s; }
-@media (prefers-reduced-motion: reduce) {
+    .location-line {
+  font-size: 0.9rem;
+  color: #b5b5b5;
+  margin-top: 6px;
+}
+.location-line .highlight {
+  color: #4fd1c5;
+  font-weight: 500;
+}
+  @media (prefers-reduced-motion: reduce) {
   section {
     animation: none;
   }
-}
-
- </style>
+}  
+</style>
 </head>
 <body>
 
@@ -202,9 +200,10 @@ section:nth-of-type(5) { animation-delay: 0.5s; }
   <section class="hero">
     <h1>Hi, I’m Neha Patil</h1>
     <img src="Neha_Patil.jpg" alt="Neha Patil" class="profile-photo">
-    <div class="subtitle">Strategy | Operations – Supply Chain | Business Transformation</div>
-    <p>Germany → Open to India relocation</p>
-
+    <div class="subtitle">Strategy | Operations | Supply Chain | Business Transformation</div>
+   <p class="location-line">
+  Based in Germany · <span class="highlight">Open to relocation (India)</span>
+</p>
     <div class="buttons">
       <a href="#contact" class="primary">Contact Me</a>
       <a href="#">Download Resume</a>
@@ -228,41 +227,57 @@ section:nth-of-type(5) { animation-delay: 0.5s; }
   <!-- EXPERIENCE -->
   <section>
     <h2>Professional Journey</h2>
-
+<div class="experience">
+  <div class="role">Manager – Last Mile Operations <span class="role-meta">(Supply Chain & Operations Strategy)</span>
+  </div>
+  <div class="company">Amazon · Feb 2025 – Present</div>
+    <p>
+    Driving last-mile and Same-Day Delivery operations with a focus on scale, efficiency, and execution excellence.
+    </p>
+</div>
     <div class="experience">
-      <div class="role">Manager – Last Mile Operations</div>
-      <div class="company">Amazon · Feb 2025 – Present</div>
-      Driving last-mile and Same-Day Delivery operations with a focus on scale, efficiency, and execution excellence.
-    </div>
-
-    <div class="experience">
-      <div class="role">Consultant</div>
+      <div class="role">Consultant <span class="role-meta">(Project Manager - Global Rollout)</span>
+      </div>
       <div class="company">Infosys Consulting · Apr 2022 – Jan 2025</div>
-      Led global strategy and SAP transformation programs, coordinating cross-regional stakeholders to deliver complex, multi-country initiatives.
+  <p>
+  Led global strategy and SAP transformation programs, coordinating cross-regional stakeholders to deliver complex, multi-country initiatives.
+  </p>
     </div>
 
     <div class="experience">
-      <div class="role">Management Consulting Intern</div>
+      <div class="role">Management Consulting Intern <span class="role-meta">(Automotive Consulting – Mobility & Digital Transformation)</span>
+      </div>
       <div class="company">Capgemini Invent · Oct 2021 – Dec 2021</div>
+      <p>
       Supported automotive mobility and digital transformation engagements through structured analysis and executive-ready insights.
+      </p>
     </div>
 
     <div class="experience">
-      <div class="role">Senior Product Design Engineer</div>
+      <div class="role">Senior Product Design Engineer <span class="role-meta">(Body-in-White (BIW) Process Planning - Cost Optimization & Global Scale-Up)</span>
+      </div>
       <div class="company">Mercedes-Benz Research & Development India · Oct 2018 – Dec 2020</div>
+      <p>
       Drove Centre of Competence initiatives for BIW process planning, delivering cost savings, quality improvements, and scalable digital manufacturing solutions.
+      </p>
     </div>
 
     <div class="experience">
-      <div class="role">Product Design Engineer</div>
+      <div class="role">Product Design Engineer <span class="role-meta">(Body-in-White (BIW) Body Shop - Process Planning & Efficiency Improvement)</span>
+      </div>
       <div class="company">Mercedes-Benz Research & Development India · Aug 2016 – Sep 2018</div>
+      <p>
       Executed BIW body shop process planning and fixture design, improving efficiency and standardizing manufacturing workflows.
+      </p>
     </div>
 
     <div class="experience">
-      <div class="role">Graduate Engineer Trainee</div>
+      <div class="role">Graduate Engineer Trainee <span class="role-meta">(Body Shop Processes - RDS (Rohbau Datenbank System) Global SaaS Rollout)</span>
+      </div>
       <div class="company">Mercedes-Benz Research & Development India · Nov 2015 – Jul 2016</div>
+      <p>
       Contributed to the global rollout of RDS, a centralized SaaS-based BIW inspection and quality platform, enabling standardized execution across multiple Mercedes-Benz plants.
+      </p>
     </div>
   </section>
 
@@ -278,19 +293,19 @@ section:nth-of-type(5) { animation-delay: 0.5s; }
   <h2>Contact Me</h2>
 
   <p class="contact-item">
-    📧 <a href="mailto:nehapatil2105@yahoo.com">nehapatil2105@yahoo.com</a>
+    </strong>Email: </strong> <a href="mailto:nehapatil2105@yahoo.com">nehapatil2105@yahoo.com</a>
   </p>
 
   <p class="contact-item">
-    📞 <a href="tel:+4917688323297">+49 176 8832 3297</a>
+    </strong>WhatsApp: </strong> <a href="https://wa.me/919890190521" target="_blank">+91 98901 90521</a>
   </p>
 
   <p class="contact-item">
-    WhatsApp: <a href="https://wa.me/919890190521" target="_blank">+91 98901 90521</a>
+    </strong>Phone: </strong> <a href="tel:+4917688323297">+49 176 8832 3297</a>
   </p>
 
   <p class="contact-item">
-    LinkedIn: 
+    </strong>LinkedIn:</strong>
     <a href="https://www.linkedin.com/in/patilnehar" target="_blank">
       https://www.linkedin.com/in/patilnehar
     </a>
@@ -303,6 +318,5 @@ section:nth-of-type(5) { animation-delay: 0.5s; }
     No services are offered and no data is collected. The views expressed are personal and do not represent those
     of any current or former employer. All information provided is accurate to the best of my knowledge.
   </footer>
-
 </body>
 </html>
