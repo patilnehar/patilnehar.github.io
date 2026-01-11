@@ -272,121 +272,10 @@ footer {
   color: var(--primary-accent);
   opacity: 1;
 }
-   /* =====================
-   NAVBAR BASE STYLES
-   ===================== */
-
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  box-sizing: border-box;
-
-  background: #0f0f0f;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 14px 16px; /* reduced padding */
-  z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.nav-logo {
-  color: var(--text-primary);
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.nav-links {
-  display: flex;
-  gap: 24px;
-}
-
-.nav-links a {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-}
-
-.nav-links a:hover {
-  color: var(--primary-accent);
-}
-
-.nav-toggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--text-primary);
-}
-    /* =====================
-   CLEAN MOBILE SLIDE MENU
-   ===================== */
-  @media (prefers-reduced-motion: reduce) {
-  section {
-    animation: none;
-  }
-}  
- /* =====================
-   CLEAN MOBILE SLIDE MENU (FINAL)
-   ===================== */
-
-.nav-toggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: var(--text-primary);
-}
-
-@media (max-width: 768px) {
-
-  .nav-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 80%;
-    max-width: 300px;
-    height: 100vh;
-
-    background: #0f0f0f;
-    padding: 100px 32px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-
-    transition: left 0.3s ease;
-    z-index: 999;
-  }
-
-  .nav-links a {
-    font-size: 1.4rem;
-    color: var(--text-primary);
-  }
-
-  .nav-links.open {
-    left: 0;
-  }
-}
-   
 </style>
 </head>
 <body>
   <!-- HERO -->
-  <nav class="navbar">
-  <div class="nav-links" id="navLinks">
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </div>
-
-  <div class="nav-toggle" id="navToggle">☰</div>
-</nav>
   <section class="hero">
     <h1>
   Hi, I’m <span class="name-accent">Neha Patil</span>
@@ -572,28 +461,5 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
     No services are offered and no data is collected. The views expressed are personal and do not represent those
     of any current or former employer. All information provided is accurate to the best of my knowledge.
   </footer>
- <script>
-  const navToggle = document.getElementById("navToggle");
-  const navLinks = document.getElementById("navLinks");
-  const navItems = document.querySelectorAll(".nav-links a");
-
-  // Toggle menu open / close
- navToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-
-  if (navLinks.classList.contains("open")) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "";
-  }
-});
-  // Close menu + smooth scroll on link click
-  navItems.forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    document.body.style.overflow = "";
-  });
-});
-</script>
 </body>
 </html>
