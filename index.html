@@ -573,14 +573,15 @@ function showSection(id) {
 
 /* Nav click behavior */
 links.forEach(link => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click", (e) => {
     if (window.innerWidth <= 768) {
+      e.preventDefault(); // ⬅️ IMPORTANT
 
       // HOME → show all sections
       if (link.dataset.home === "true") {
         sections.forEach(sec => sec.style.display = "block");
         window.scrollTo(0, 0);
-      } 
+      }
       // OTHER LINKS → show one section
       else {
         showSection(link.getAttribute("href"));
@@ -590,6 +591,7 @@ links.forEach(link => {
     }
   });
 });
+
 
 /* ✅ INITIAL MOBILE LOAD → SHOW ALL (IMPORTANT) */
 if (window.innerWidth <= 768) {
