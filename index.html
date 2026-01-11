@@ -310,10 +310,10 @@ footer {
 }
 
 .nav-toggle {
-  display: none;
-  font-size: 1.6rem;
+  display: block;
+  font-size: 2.5rem;
   cursor: pointer;
-  color: var(--text-primary);
+  color: red;
 }
 
 /* =====================
@@ -328,6 +328,17 @@ footer {
   .nav-toggle {
     display: block;  /* show ☰ */
   }
+}
+    .nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #0f0f0f;
+  padding: 16px 20px;
+  border-radius: 12px;
+  gap: 14px;
 }
  /* Mobile menu open state */
 .nav-links.open {
@@ -551,7 +562,6 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
     No services are offered and no data is collected. The views expressed are personal and do not represent those
     of any current or former employer. All information provided is accurate to the best of my knowledge.
   </footer>
-  
   <script>
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
@@ -560,6 +570,5 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
     navLinks.classList.toggle("open");
   });
 </script>
-  
 </body>
 </html>
