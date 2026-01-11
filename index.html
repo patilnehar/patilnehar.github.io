@@ -20,6 +20,7 @@ body {
   background: #0f0f0f;
  color: var(--text-primary);
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -580,17 +581,18 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
  <script>
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
+  const navItems = document.querySelectorAll(".nav-links a");
 
-  // Toggle menu
-  navToggle.onclick = () => {
+  // Toggle menu open / close
+  navToggle.addEventListener("click", () => {
     navLinks.classList.toggle("open");
-  };
+  });
 
-  // Close menu on link click (mobile)
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.onclick = () => {
+  // Close menu + smooth scroll on link click
+  navItems.forEach(link => {
+    link.addEventListener("click", () => {
       navLinks.classList.remove("open");
-    };
+    });
   });
 </script>
 </body>
