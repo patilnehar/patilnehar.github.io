@@ -249,12 +249,6 @@ footer {
   color: var(--primary-accent);
 }
 
-.location-dot {
-  width: 6px;                  /* 👈 matches skill dot visual size */
-  height: 6px;
-  background: var(--text-muted);
-  border-radius: 50%;
-}
     .skills-line {
   display: flex;
   justify-content: center;
@@ -263,8 +257,8 @@ footer {
   flex-wrap: wrap;
 }
 
-.skills-line .dot {
-  color: var(--text-muted);   /* 👈 gray */
+.dot {
+  color: var(--text-muted);
   font-size: 1.1rem;
   opacity: 0.9;
 }
@@ -297,7 +291,7 @@ footer {
     
    <div class="location-line">
   <div class="location-item">
-    <span class="location-dot"></span>
+   <span class="dot">•</span>
     <span>Based in Germany</span>
   </div>  
  <div class="location-item highlight">
