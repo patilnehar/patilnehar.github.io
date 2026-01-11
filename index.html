@@ -272,7 +272,76 @@ footer {
   color: var(--primary-accent);
   opacity: 1;
 }
+   /* =====================
+   NAVBAR BASE STYLES
+   ===================== */
 
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #0f0f0f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-logo {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+  color: var(--primary-accent);
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+/* =====================
+   MOBILE NAVBAR
+   ===================== */
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;   /* hide links on mobile */
+  }
+
+  .nav-toggle {
+    display: block;  /* show ☰ */
+  }
+}
+ /* Mobile menu open state */
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #0f0f0f;
+  padding: 16px 20px;
+  border-radius: 12px;
+  gap: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
   @media (prefers-reduced-motion: reduce) {
   section {
     animation: none;
@@ -283,11 +352,19 @@ footer {
 </head>
 <body>
   <!-- HERO -->
-  <nav>
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#education">Education</a>
-  <a href="#contact">Contact</a>
+  <nav class="navbar">
+  <div class="nav-logo">Neha Patil</div>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="nav-toggle" id="navToggle">
+    ☰
+  </div>
 </nav>
   <section class="hero">
     <h1>
@@ -474,5 +551,15 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
     No services are offered and no data is collected. The views expressed are personal and do not represent those
     of any current or former employer. All information provided is accurate to the best of my knowledge.
   </footer>
+  
+  <script>
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+</script>
+  
 </body>
 </html>
