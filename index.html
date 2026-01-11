@@ -40,7 +40,8 @@ h1, h2, h3 {
 
 h1 {
   font-size: 2.8rem;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-weight: 600;   /* 👈 bolder, but still elegant */
 }
     .name-accent {
   color: var(--primary-accent);
@@ -96,8 +97,8 @@ h2 {
   display: flex;
   justify-content: center;
   gap: 16px;
+  margin-top: 28px;   /* 👈 creates breathing room */
 }
-
 .buttons a {
   padding: 12px 24px;
   border-radius: 30px;
@@ -236,9 +237,9 @@ footer {
 }
 
 .location-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--primary-accent);
+  width: 8px;                 /* 👈 same visual weight as text dots */
+  height: 8px;
+  background: var(--text-muted); /* 👈 gray */
   border-radius: 50%;
 }
     .skills-line {
@@ -250,11 +251,10 @@ footer {
 }
 
 .skills-line .dot {
-  color: var(--primary-accent);
-  font-size: 1.2rem;
-  opacity: 0.8;
+  color: var(--text-muted);   /* 👈 gray */
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
-
   @media (prefers-reduced-motion: reduce) {
   section {
     animation: none;
