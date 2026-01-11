@@ -230,6 +230,13 @@ footer {
     max-width: 260px;
     text-align: center;
   }
+    /* STEP 2: Hide content sections on mobile */
+  .mobile-section {
+    display: none;
+  }
+    .mobile-section.active {
+    display: block;
+  }
 }
   .location-line {
   display: flex;
@@ -391,7 +398,7 @@ padding: 0 16px;
   </section>
 
   <!-- ABOUT -->
-  <section id="about">
+  <section id="about" class="mobile-section">
   <h2>About Me</h2>
   <div class="section-divider"></div>
     <p>
@@ -406,7 +413,7 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience">
+ <section id="experience" class="mobile-section">
   <h2>Professional Journey</h2>
 <div class="experience">
   <div class="role">Manager – Last Mile Operations <span class="role-meta">(Supply Chain & Operations Strategy)</span>
@@ -488,14 +495,14 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
   </section>
 
   <!-- EDUCATION -->
-  <section id="education">
+  <section id="education" class="mobile-section">
   <h2>Education</h2>
     <p><strong>MBA</strong><br>Mannheim Business School, Germany · 2021</p>
     <p><strong>Bachelor of Engineering (Mechanical)</strong><br>Savitribai Phule Pune University, India · 2015</p>
   </section>
 
   <!-- CONTACT -->
-<section id="contact" class="contact">
+<section id="contact" class="contact mobile-section">
   <h2>Contact Me</h2>
 
   <p class="contact-item">
@@ -554,6 +561,26 @@ last-mile and Same-Day Delivery launches at Amazon, and management consulting at
       navLinks.classList.remove("open");
     });
   });
+    const mobileLinks = document.querySelectorAll(".nav-links a");
+const mobileSections = document.querySelectorAll(".mobile-section");
+
+mobileLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth <= 768) {
+      mobileSections.forEach(section => {
+        section.style.display = "none";
+      });
+
+      const targetId = link.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        targetSection.style.display = "block";
+        window.scrollTo(0, 0);
+      }
+    }
+  });
+});
 </script>
 </body>
 </html>
