@@ -295,8 +295,24 @@ padding: 0 16px;
 }
 
 .nav-links a {
+  position: relative;
   font-size: 0.9rem;
   color: var(--text-secondary);
+  padding: 6px 0;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1.5px;
+  background: var(--primary-accent);
+  transition: width 0.25s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
 }
 
 .nav-links a:hover {
