@@ -592,15 +592,6 @@ navToggle.addEventListener("click", () => {
 });
 
 const links = document.querySelectorAll(".nav-links a");
-  // DESKTOP: active tab underline
-links.forEach(link => {
-  link.addEventListener("click", () => {
-    if (window.innerWidth > 768) {
-      links.forEach(l => l.classList.remove("active"));
-      link.classList.add("active");
-    }
-  });
-});
 
 // DESKTOP: set Home active on page load
 if (window.innerWidth > 768) {
