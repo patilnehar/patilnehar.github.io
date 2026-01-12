@@ -610,6 +610,16 @@ link.classList.add("active");
 if (window.innerWidth <= 768) {
   sections.forEach(sec => sec.style.display = "block");
 }
+    document.addEventListener("click", (e) => {
+  if (
+    window.innerWidth <= 768 &&
+    navLinks.classList.contains("open") &&
+    !navLinks.contains(e.target) &&
+    !navToggle.contains(e.target)
+  ) {
+    navLinks.classList.remove("open");
+  }
+});
 </script>
 </body>
 </html>
