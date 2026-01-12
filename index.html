@@ -608,6 +608,8 @@ window.addEventListener("scroll", () => {
   if (window.innerWidth <= 768) return; // 🚫 mobile untouched
 
   let current = "";
+  if (scrollY < 200) current = "home";
+
 
   desktopSections.forEach(section => {
     const sectionTop = section.offsetTop - 80;
