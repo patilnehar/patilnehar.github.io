@@ -282,7 +282,7 @@ footer {
   background: #0f0f0f;
   display: flex;
   align-items: center;
- justify-content: space-between;
+ justify-content: center;
 padding: 0 16px;
 
   z-index: 1000;
@@ -398,7 +398,7 @@ padding: 0 16px;
   <div class="nav-toggle" id="navToggle">☰</div>
 </nav>
   <!-- HERO -->
-<section class="hero mobile-section home">
+<section id="home" class="hero mobile-section home"
     <h1>
   Hi, I’m <span class="name-accent">Neha Patil</span>
 </h1>
@@ -592,7 +592,7 @@ navToggle.addEventListener("click", () => {
 });
 
 const links = document.querySelectorAll(".nav-links a");
-    // DESKTOP: active tab underline
+  // DESKTOP: active tab underline
 links.forEach(link => {
   link.addEventListener("click", () => {
     if (window.innerWidth > 768) {
@@ -601,6 +601,12 @@ links.forEach(link => {
     }
   });
 });
+
+// DESKTOP: set Home active on page load
+if (window.innerWidth > 768) {
+  const homeLink = document.querySelector('.nav-links a[href="#home"]');
+  if (homeLink) homeLink.classList.add("active");
+}
 
 const sections = document.querySelectorAll(".mobile-section");
 
